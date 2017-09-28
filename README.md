@@ -1,5 +1,7 @@
 # Week6_API
 
-##I need to use this more often.
+##How it works
 
-This is going to be the fixes thing 
+There's isn't much to be said about this. 
+
+All you really need to understand is that none of this would be possible without an API key.
