@@ -3,44 +3,6 @@ $(document).ready(function() {
 
     var cyberPunk = ["Blade Runner", "CyberPunk", "Ghost In The Shell"];
 
-
-//this here function renders the initial buttons for the array provided on line 4. 
-    function buttonRender() {
-
-
-        $("#buttons-view").empty();
-
-        for (var i = 0; i < cyberPunk.length; i++) {
-
-            var gifButton = $("<button>");
-            //needed to add numerous classes to this for bootstrap presentation as well as DOM manipulation. 
-            gifButton.addClass("cyber");
-            gifButton.addClass("btn btn-primary");
-
-            //This attributes each button with the name within the cyberPunk array
-            gifButton.attr("data-name", cyberPunk[i]);
-
-            //at which point, we have this that actually displays the stuff. neato.
-            gifButton.text(cyberPunk[i]);
-            $("#buttons-view").append(gifButton);
-        }
-
-    }
-
-//this function is called whened a new button is added via input.
-    function newButton() {
-        $("#add-gif").on("click", function() {
-            //branded a new variable that will add into the gif input ID
-            var cyber = $("#gif-input").val().trim();
-            //each time a new input is added, it pushes that variable into the global variable cyberPunk
-            cyberPunk.push(cyber);
-
-            buttonRender(); //calling this within newButton function allows for a button to be rendered with everything that it implies.
-            return false; //I looked this up. I don't know why it works. Stops page refresh
-        });
-
-    }
-
 //now for the meat and bones of this thing.
     function cyberPunkDisplay() {
         //this renames the new cyber variable to work within this function. to add to 'data-name' everytime the new q is added within the url. neato
@@ -104,6 +66,44 @@ $(document).ready(function() {
 
 
     }
+//this here function renders the initial buttons for the array provided on line 4. 
+    function buttonRender() {
+
+
+        $("#buttons-view").empty();
+
+        for (var i = 0; i < cyberPunk.length; i++) {
+
+            var gifButton = $("<button>");
+            //needed to add numerous classes to this for bootstrap presentation as well as DOM manipulation. 
+            gifButton.addClass("cyber");
+            gifButton.addClass("btn btn-primary");
+
+            //This attributes each button with the name within the cyberPunk array
+            gifButton.attr("data-name", cyberPunk[i]);
+
+            //at which point, we have this that actually displays the stuff. neato.
+            gifButton.text(cyberPunk[i]);
+            $("#buttons-view").append(gifButton);
+        }
+
+    }
+
+//this function is called whened a new button is added via input.
+    function newButton() {
+        $("#add-gif").on("click", function() {
+            //branded a new variable that will add into the gif input ID
+            var cyber = $("#gif-input").val().trim();
+            //each time a new input is added, it pushes that variable into the global variable cyberPunk
+            cyberPunk.push(cyber);
+
+            buttonRender(); //calling this within newButton function allows for a button to be rendered with everything that it implies.
+            return false; //I looked this up. I don't know why it works. Stops page refresh
+        });
+
+    }
+
+
 
 
 //finally, these things are called. 
